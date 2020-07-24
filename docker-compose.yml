@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: web.dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./src:/usr/share/nginx/html
+    depends_on:
+      - phpfpm
+    networks:
+      - abc-net
+  
+  phpfpm:
+    image: hermsi/alpine-fpm-php:latest
+    volumes:
+      - ./src:/usr/share/nginx/html
+    ports:
+      - "9000:9000"
+    networks:
+      - abc-net
+
+networks:
+  abc-net:
