@@ -1,14 +1,16 @@
-# docker-nginx-ssl
+# docker-web-template-nginx-ssl
 
 ## Description
 Creates an instance of a nginx server with self-signed certificates.
 It will serve .php, .html, .htm files.
 
-## Technologies used
-- docker
-- docker-compose
+## Tech stack
 - fast php
 - openssl
+
+## Docker stack
+- docker-compose
+- nginx:alpine
 
 ## Prerequisites
 - docker installed
@@ -20,7 +22,7 @@ It will serve .php, .html, .htm files.
 Be sure when running this command, you are in the folder
 with docker-compose.yml file.
 
-```docker-compose up -d -build```
+```docker-compose up -d --build```
 
 Go to <https://localhost>
 
